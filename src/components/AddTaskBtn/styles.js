@@ -1,4 +1,4 @@
-import styled , { css } from 'styled-components';
+import styled from 'styled-components';
 import { colors } from '../../common/constants';
 import AddTask from '../../static/images/add_icon.svg';
 
@@ -26,4 +26,4 @@ export const AddTaskBtnStyled = styled.button`
         height: 36px;
         background-image: url(${AddTask});
     }
-`
+`;

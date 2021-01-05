@@ -1,5 +1,5 @@
-import styled , { css } from 'styled-components';
-import { colors } from '../../common/constants';
+import styled from 'styled-components';
+import { colors } from '../constants';
 import okIcon from '../../static/images/done_icon.svg';
 
 export const CheckboxStyled = styled.input`
@@ -33,4 +33,4 @@ export const CheckboxStyled = styled.input`
         background-size: contain;
         background-image: url(${okIcon});
     }
-`
+`;

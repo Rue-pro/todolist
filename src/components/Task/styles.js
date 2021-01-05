@@ -1,4 +1,4 @@
-import styled , { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const TaskStyled = styled.div`
     display: flex;
@@ -7,8 +7,7 @@ export const TaskStyled = styled.div`
         margin-right: 20px;
     }
     & > span {
-
         margin-right: 20px;
         width: calc(100% - 188px)
     }
-`
+`;

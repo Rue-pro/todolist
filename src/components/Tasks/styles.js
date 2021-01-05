@@ -1,4 +1,4 @@
-import styled , { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const TasksStyled = styled.div`
     display: flex;
@@ -6,4 +6,4 @@ export const TasksStyled = styled.div`
     & > div {
         margin-bottom: 20px;
     }
-`
+`;
