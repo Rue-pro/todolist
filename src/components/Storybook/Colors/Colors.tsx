@@ -9,7 +9,7 @@ export const Colors = () => {
       <ColorsHeaderStyled>
         <div>Название</div>
         <div>Цвет</div>
-        <div>HEX</div>
+        <div>HEX/rgba</div>
       </ColorsHeaderStyled>
       {Object.entries(colors).map(([key, color], i) => {
         return (

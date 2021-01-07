@@ -5,7 +5,7 @@ import { Checkbox } from '../../common/Checkbox/Checkbox'
 import { Text } from '../../common/Text/Text'
 
 export const Task = (props: any) => {
-  const { text, status } = props
+  const { text, status } = props.task
   return (
     <TaskStyled>
       <Checkbox />

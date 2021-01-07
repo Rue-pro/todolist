@@ -9,7 +9,6 @@ export const ButtonStyled = styled.button`
   border: none;
   border-radius: 23px;
   outline: none;
-  font-weight: 500;
   cursor: pointer;
 
   ${(props) => {

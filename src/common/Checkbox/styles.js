@@ -21,9 +21,9 @@ export const CheckboxStyled = styled.input`
   }
 
   &:checked:before {
-    border: 2px solid rgb(${colors.primary});
-    background-color: rgb(${colors.primary});
-    box-shadow: 0px 6px 6px rgba(${colors.primary}, 0.25);
+    border: 2px solid ${colors.primary};
+    background-color: ${colors.primary};
+    box-shadow: 0px 6px 6px ${colors.shadow_primary};
   }
 
   &:checked:after {

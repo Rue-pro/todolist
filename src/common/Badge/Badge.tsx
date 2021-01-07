@@ -4,33 +4,33 @@ import { Text } from '../Text/Text'
 import { BadgeStyled } from './styles'
 
 export const Badge = (props: any) => {
-  let color = 'white'
-  let bgColor = 'gray'
+  let color = 'black'
+  let bgColor = 'black'
 
   switch (props.children) {
     case 'Approved':
-      color = `rgb(${colors.primary})`
-      bgColor = `rgb(${colors.purple_light})`
+      color = colors.primary
+      bgColor = colors.purple_light
       break
     case 'In Progress':
-      color = `rgb(${colors.green})`
-      bgColor = `rgb(${colors.green_light})`
+      color = colors.green
+      bgColor = colors.green_light
       break
     case 'In Review':
-      color = `rgb(${colors.red})`
-      bgColor = `rgb(${colors.red_light})`
+      color = colors.red
+      bgColor = colors.red_light
       break
     case 'Waiting':
-      color = `rgb(${colors.gray})`
-      bgColor = `rgb(${colors.gray_light})`
-      break
-    default:
+      color = colors.gray
+      bgColor = colors.gray_light
       break
   }
 
   return (
-    <BadgeStyled bgColor={bgColor} color={color} {...props}>
-      <Text color={color}>{props.children}</Text>
-    </BadgeStyled>
+    (props.children && (
+      <BadgeStyled bgColor={bgColor} color={color} {...props}>
+        <Text color={color}>{props.children}</Text>
+      </BadgeStyled>
+    )) || <></>
   )
 }

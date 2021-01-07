@@ -17,5 +17,6 @@ export const colors = {
   btn_primary_active: '#301a7d',
   btn_primary_focus: '#7E5DF1',
   btn_primary_text_disabled: '#BEBEBE',
-  btn_primary_disable: '#ACA0D2'
+  btn_primary_disable: '#ACA0D2',
+  shadow_primary: 'rgba(98, 60, 231, 0.25)'
 }

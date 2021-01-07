@@ -3,12 +3,14 @@ import { colors } from '../constants'
 
 export const TextStyled = styled.span`
   font-weight: 500;
+  font-size: 16px;
   text-align: left;
+
   ${(props) => {
-    const { primary, secondary, disabled } = props
+    const { primary, secondary, disabled, color } = props
     if (!disabled) {
       return css`
-        color: ${(primary && '#FFFFFF') || (secondary && colors.text_secondary) || colors.text};
+        color: ${color || (primary && '#FFFFFF') || (secondary && colors.text_secondary) || colors.text};
       `
     }
     return css`

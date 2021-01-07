@@ -12,8 +12,8 @@ export const AddTaskBtnStyled = styled.button`
   border-top-right-radius: 13px;
   border-bottom-right-radius: 13px;
   border-bottom-left-radius: 13px;
-  background-color: rgb(${colors.primary});
-  box-shadow: 0px 6px 6px rgba(${colors.primary}, 0.25);
+  background-color: ${colors.primary};
+  box-shadow: 0px 6px 6px ${colors.shadow_primary};
   outline: none;
   cursor: pointer;
 

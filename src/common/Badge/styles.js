@@ -2,6 +2,8 @@ import styled, { css } from 'styled-components'
 import { colors } from '../constants'
 
 export const BadgeStyled = styled.div`
+  display: flex;
+  justify-content: center;
   box-sizing: border-box;
   min-width: 130px;
   padding: 12px 18px;
