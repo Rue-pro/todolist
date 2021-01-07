@@ -6,17 +6,17 @@ export const AddTaskBtnStyled = styled.button`
   position: fixed;
   bottom: 6%;
   left: 4%;
-  height: 48px;
   width: 48px;
+  height: 48px;
   border: none;
+  border-top-right-radius: 13px;
+  border-bottom-right-radius: 13px;
+  border-bottom-left-radius: 13px;
+  background-color: rgb(${colors.primary});
+  box-shadow: 0px 6px 6px rgba(${colors.primary}, 0.25);
   outline: none;
   cursor: pointer;
-  background-color: rgb(${colors.primary});
 
-  border-bottom-left-radius: 13px;
-  border-bottom-right-radius: 13px;
-  border-top-right-radius: 13px;
-  box-shadow: 0px 6px 6px rgba(${colors.primary}, 0.25);
   &:after {
     content: '';
     position: absolute;

@@ -7,6 +7,7 @@ export const ColorsStyled = styled.div`
 export const ColorsHeaderStyled = styled.div`
   display: flex;
   border-bottom: 2px solid #d4d4d4;
+
   & > div {
     width: 33%;
     padding: 10px 1rem;
@@ -23,9 +24,10 @@ export const ColorsRowStyled = styled.div`
   }
 `
 export const ColorsColorStyled = styled.div`
-  height: 30px;
   width: 30px;
+  height: 30px;
   border-radius: 50%;
+
   ${(props) => {
     const { color } = props
     return css`

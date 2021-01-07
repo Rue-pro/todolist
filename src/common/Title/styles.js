@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components'
 
 export const TitleStyled = styled.span`
+  color: #000000;
   font-weight: 500;
   text-align: left;
-  color: #000000;
+
   ${(props) => {
     const { h1, h2, h3, pM, pS } = props
     return css`

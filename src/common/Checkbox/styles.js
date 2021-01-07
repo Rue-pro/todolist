@@ -4,25 +4,28 @@ import okIcon from '../../static/images/done_icon.svg'
 
 export const CheckboxStyled = styled.input`
   position: relative;
-  cursor: pointer;
   width: 18px;
   height: 18px;
+  cursor: pointer;
+
   &:before {
     content: '';
     position: absolute;
-    width: 100%;
-    height: 100%;
     top: -2px;
     left: -2px;
-    border-radius: 7px;
+    width: 100%;
+    height: 100%;
     border: 2px solid #e3e6ed;
+    border-radius: 7px;
     background-color: #ffffff;
   }
+
   &:checked:before {
-    background-color: rgb(${colors.primary});
     border: 2px solid rgb(${colors.primary});
+    background-color: rgb(${colors.primary});
     box-shadow: 0px 6px 6px rgba(${colors.primary}, 0.25);
   }
+
   &:checked:after {
     content: '';
     position: absolute;
@@ -30,7 +33,7 @@ export const CheckboxStyled = styled.input`
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: contain;
     background-image: url(${okIcon});
+    background-size: contain;
   }
 `
