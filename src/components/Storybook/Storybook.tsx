@@ -4,11 +4,11 @@ import { Buttons } from './Buttons/Buttons'
 import { Typography } from './Typography/Typography'
 
 export const Storybook = () => {
-    return (
-        <>
-            <Colors />
-            <Typography />
-            <Buttons />
-        </>
-    )
+  return (
+    <>
+      <Colors />
+      <Typography />
+      <Buttons />
+    </>
+  )
 }
