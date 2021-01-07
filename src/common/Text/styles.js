@@ -6,11 +6,13 @@ export const TextStyled = styled.span`
   text-align: left;
   ${(props) => {
     const { primary, secondary, disabled } = props
+    if (!disabled) {
+      return css`
+        color: ${(primary && '#FFFFFF') || (secondary && colors.text_secondary) || colors.text};
+      `
+    }
     return css`
-      color: ${(primary && colors.text) ||
-      (secondary && colors.text_secondary) ||
-      (disabled && colors.text_light) ||
-      colors.text};
+      color: ${disabled && colors.btn_primary_text_disabled};
     `
   }}
 `

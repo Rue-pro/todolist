@@ -1,9 +1,10 @@
 import React from 'react'
+import { ButtonsStyled } from './styles'
 import { Button } from '../../../common/Button/Button'
 
 export const Buttons = () => {
   return (
-    <>
+    <ButtonsStyled>
       Primary button
       <Button primary>Regular</Button>
       <Button primary className="hover">
@@ -18,9 +19,6 @@ export const Buttons = () => {
       <Button primary disabled>
         Disabled
       </Button>
-      <Button primary isLoading>
-        Loading
-      </Button>
-    </>
+    </ButtonsStyled>
   )
 }

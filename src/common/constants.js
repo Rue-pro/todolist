@@ -11,5 +11,11 @@ export const colors = {
   red: '#D83749',
   red_light: '#FEE8EA',
   gray: '#9196A7',
-  gray_light: '#F7F8FC'
+  gray_light: '#F7F8FC',
+  btn_primary: '#623CE7',
+  btn_primary_hover: '#4924CA',
+  btn_primary_active: '#301a7d',
+  btn_primary_focus: '#7E5DF1',
+  btn_primary_text_disabled: '#BEBEBE',
+  btn_primary_disable: '#ACA0D2'
 }
