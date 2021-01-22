@@ -25,7 +25,8 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.{js,ts,tsx} --quiet --fix",
-    "lint:css": "stylelint src/**/styles.js"
+    "lint:css": "stylelint src/**/styles.js",
+    "lint:fix": "stylelint src/**/styles.js --quiet --fix"
   },
   "eslintConfig": {
     "extends": [
