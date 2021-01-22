@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { AddTaskBtnStyled } from './styles'
 
 export const AddTaskBtn = (props: any) => {
-  return <AddTaskBtnStyled {...props}></AddTaskBtnStyled>
+  const { clickAddTaskBtnHandler } = props
+  return <AddTaskBtnStyled onClick={clickAddTaskBtnHandler}></AddTaskBtnStyled>
 }

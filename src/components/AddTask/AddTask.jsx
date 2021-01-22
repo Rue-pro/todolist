@@ -2,6 +2,7 @@ import React from 'react'
 import { Input } from '../../common/Input/Input'
 import { Select } from '../../common/Select/Select'
 import { Button } from '../../common/Button/Button'
+import { Title } from '../../common/Title/Title'
 
 export const AddTask = () => {
   const options = [
@@ -34,13 +35,11 @@ export const AddTask = () => {
   ]
   return (
     <>
+      <Title h2>New task</Title>
       <Input placeholder="Task" />
-
       <Select options={options} />
-
       <Select options={taskTypes} />
-
-      <Button primary>adsda</Button>
+      <Button primary>Save</Button>
     </>
   )
 }
