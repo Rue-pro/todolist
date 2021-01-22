@@ -2,8 +2,7 @@ import React, { useRef, useState } from 'react'
 import { SelectStyles, SelectSelectedValStyles, SelectOptionsStyles, SelectOptionStyles } from './styles'
 
 export const Select = (props: any) => {
-  const selectedRef = useRef<HTMLCanvasElement>(null)
-  const optionsRef = useRef<HTMLCanvasElement>(null)
+  const selectRef = useRef<HTMLDivElement>(null)
 
   const [selected, setSelected] = useState(props.options[0].valueText)
   const [showOptions, setShowOptions] = useState(false)
@@ -11,13 +10,16 @@ export const Select = (props: any) => {
   const openOptions = () => {
     showOptions ? setShowOptions(false) : setShowOptions(true)
   }
+  const closeOptions = () => {
+    setShowOptions(false)
+  }
   const selectOption = (e: any) => {
     setSelected(e.target.innerHTML)
     setShowOptions(false)
   }
 
   return props.options ? (
-    <SelectStyles>
+    <SelectStyles onMouseLeave={closeOptions}>
       <SelectSelectedValStyles onClick={openOptions}>{selected}</SelectSelectedValStyles>
       {showOptions && (
         <SelectOptionsStyles>
