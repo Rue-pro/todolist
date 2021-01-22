@@ -15,20 +15,23 @@ export const ButtonStyled = styled.button`
     const { primary, disabled } = props
     if (!disabled) {
       return css`
-        background-color: ${(primary && `${colors.btn_primary}`) || 'black'};
-
+        background: linear-gradient(45deg, ${colors.btn_primary_focus}, ${colors.btn_primary});
+        background-color: ${colors.btn_primary};
         &.hover,
         &:hover {
+          background: linear-gradient(45deg, ${colors.btn_primary_focus}, ${colors.btn_primary_hover});
           background-color: ${(primary && `${colors.btn_primary_hover}`) || 'black'};
         }
 
         &.focus,
         &:focus {
+          background: linear-gradient(45deg, ${colors.btn_primary_active}, ${colors.btn_primary_focus});
           background-color: ${(primary && `${colors.btn_primary_focus}`) || 'black'};
         }
 
         &.active,
         &:active {
+          background: linear-gradient(45deg, ${colors.btn_primary_hover}, ${colors.btn_primary_active});
           background-color: ${(primary && `${colors.btn_primary_active}`) || 'black'};
         }
       `
