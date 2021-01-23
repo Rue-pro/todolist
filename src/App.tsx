@@ -5,7 +5,7 @@ import './App.css'
 import { Storybook } from './components/Storybook/Storybook'
 import { TaskPage } from './components/TaskPage/TaskPage'
 
-function App() {
+function App(): React.ReactElement {
   return (
     <BrowserRouter>
       <Route path="/storybook" render={() => <Storybook />} />

@@ -1,11 +1,17 @@
 import styled, { css } from 'styled-components'
 import { colors } from '../constants'
 
-export const TextStyled = styled.span`
+interface ITextStyledProps {
+  color?: string
+  disabled?: boolean
+  primary?: boolean
+  secondary?: boolean
+}
+
+export const TextStyled = styled.span<ITextStyledProps>`
   font-weight: 500;
   font-size: 16px;
   text-align: left;
-
   ${(props) => {
     const { primary, secondary, disabled, color } = props
     if (!disabled) {

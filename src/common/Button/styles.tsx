@@ -1,7 +1,12 @@
 import styled, { css } from 'styled-components'
 import { colors } from '../constants'
 
-export const ButtonStyled = styled.button`
+interface IButtonStyledProps {
+  disabled?: boolean
+  primary?: boolean
+}
+
+export const ButtonStyled = styled.button<IButtonStyledProps>`
   box-sizing: border-box;
   width: 100%;
   min-width: 130px;

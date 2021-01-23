@@ -1,8 +1,14 @@
-import React, { useEffect, useRef } from 'react'
+import React, { useRef } from 'react'
 import { PopupStyles } from './styles'
 import { useOnClickOutside } from '../hooks'
+import { Dispatch, SetStateAction } from 'react'
 
-export const Popup = (props: any) => {
+export interface IPopupProps extends React.HTMLAttributes<HTMLDivElement> {
+  children?: React.ReactNode
+  setShowPopup: Dispatch<SetStateAction<boolean>>
+}
+
+export const Popup = (props: IPopupProps): React.ReactElement => {
   const { children, setShowPopup } = props
   const popupRef = useRef<HTMLDivElement>(null)
 
