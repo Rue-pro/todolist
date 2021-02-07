@@ -1,22 +1,23 @@
 import React from 'react'
 import { ButtonsStyled } from './styles'
 import { Button } from '../../../common/Button/Button'
+import { ButtonTypeEnum } from '../../../common/Button/Button'
 
-export const Buttons = () => {
+export const Buttons = (): React.ReactElement => {
   return (
     <ButtonsStyled>
       Primary button
-      <Button primary>Regular</Button>
-      <Button primary className="hover">
+      <Button type={ButtonTypeEnum.primary}>Regular</Button>
+      <Button type={ButtonTypeEnum.primary} className="hover">
         Hover
       </Button>
-      <Button primary className="focus">
+      <Button type={ButtonTypeEnum.primary} className="focus">
         Focus
       </Button>
-      <Button primary className="active">
+      <Button type={ButtonTypeEnum.primary} className="active">
         Active
       </Button>
-      <Button primary disabled>
+      <Button type={ButtonTypeEnum.primary} disabled>
         Disabled
       </Button>
     </ButtonsStyled>

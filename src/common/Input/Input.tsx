@@ -1,9 +1,10 @@
 import React from 'react'
 import { InputStyles } from './styles'
 
-export const Input = (props: any) => {
-  console.group('input')
-  console.log(props)
-  console.groupEnd()
+export interface IInputProps extends React.HTMLAttributes<HTMLDivElement> {
+  children?: React.ReactNode
+}
+
+export const Input = (props: IInputProps): React.ReactElement => {
   return <InputStyles {...props} />
 }
