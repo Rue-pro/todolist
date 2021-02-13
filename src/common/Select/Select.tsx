@@ -7,14 +7,13 @@ export type TSelectOption = {
 }
 
 export interface ISelectProps extends React.HTMLAttributes<HTMLDivElement> {
-  children?: React.ReactNode
   options: Array<TSelectOption>
 }
 
-export const Select = (props: ISelectProps): JSX.Element => {
+export const Select = ({ options }: ISelectProps): JSX.Element => {
   const [selected, setSelected] = useState({
-    value: props.options[0].value,
-    text: props.options[0].text
+    value: options[0].value,
+    text: options[0].text
   })
   const [showOptions, setShowOptions] = useState(false)
 
@@ -25,7 +24,7 @@ export const Select = (props: ISelectProps): JSX.Element => {
     setShowOptions(false)
   }
   const selectOption = (e: React.MouseEvent<HTMLSpanElement>): void => {
-    const selected = e.currentTarget.dataset.value || props.options[0].text
+    const selected = e.currentTarget.dataset.value || options[0].text
     setSelected({
       value: selected,
       text: e.currentTarget.innerHTML
@@ -33,10 +32,10 @@ export const Select = (props: ISelectProps): JSX.Element => {
     setShowOptions(false)
   }
 
-  return props.options ? (
+  return options ? (
     <>
       <select className="myselect1" style={{ display: 'none' }} value={selected.value}>
-        {props.options.map((option: TSelectOption) => {
+        {options.map((option: TSelectOption) => {
           return (
             <option key={option.value} defaultValue={option.value}>
               {option.text}
@@ -48,7 +47,7 @@ export const Select = (props: ISelectProps): JSX.Element => {
         <SelectSelectedValStyles onClick={toggleOptions}>{selected.text}</SelectSelectedValStyles>
         {showOptions && (
           <SelectOptionsStyles>
-            {props.options.map((option: TSelectOption) => {
+            {options.map((option: TSelectOption) => {
               return (
                 <SelectOptionStyles
                   onClick={selectOption}
