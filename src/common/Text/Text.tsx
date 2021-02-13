@@ -6,6 +6,6 @@ export interface TextProps extends React.HTMLAttributes<HTMLDivElement> {
   disabled?: boolean
 }
 
-export const Text = ({ children, ...rest }: TextProps): React.ReactElement => {
+export const Text = ({ children, ...rest }: TextProps): JSX.Element => {
   return <TextStyled {...rest}>{children}</TextStyled>
 }

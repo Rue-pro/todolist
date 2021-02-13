@@ -9,12 +9,14 @@ export interface ITaskProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: string
   badgeType: BadgeTypeEnum
   badgeText?: string
+  checkboxId?: number
 }
 
-export const Task = ({ children, badgeType, badgeText }: ITaskProps): React.ReactElement => {
+export const Task = ({ children, badgeType, badgeText, checkboxId }: ITaskProps): React.ReactElement => {
+  const checkboxUniqueId = checkboxId ? 'task_checkbox_' + checkboxId : ''
   return (
     <TaskStyled>
-      <Checkbox />
+      <Checkbox checkboxId={checkboxUniqueId} style={{ marginRight: '10px' }} />
       <Text>{children}</Text>
       <Badge type={badgeType}>{badgeText}</Badge>
     </TaskStyled>

@@ -1,4 +1,4 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { colors } from '../constants'
 
 export const SelectStyles = styled.div`
@@ -7,8 +7,9 @@ export const SelectStyles = styled.div`
 `
 
 export const SelectSelectedValStyles = styled.div`
-  padding: 10px 0;
+  padding: 8.5px 15px;
   border: 2px solid #e3e6ed;
+  line-height: normal;
   cursor: pointer;
 `
 
@@ -21,9 +22,12 @@ export const SelectOptionsStyles = styled.div`
   border: 2px solid ${colors.gray_light};
   background-color: #ffffff;
 `
+export type TSelectOptionStyles = {
+  isSelected: boolean
+}
 
-export const SelectOptionStyles = styled.span`
-  padding: 10px 0;
+export const SelectOptionStyles = styled.span<TSelectOptionStyles>`
+  padding: 8.5px 15px;
   border-bottom: 1px solid ${colors.gray_light};
   cursor: pointer;
   transition: 0.3;
@@ -35,4 +39,11 @@ export const SelectOptionStyles = styled.span`
   &:last-child() {
     border-bottom: none;
   }
+
+  ${(props) => {
+    const { isSelected } = props
+    return css`
+      background-color: ${isSelected ? colors.gray_light : 'transparent'};
+    `
+  }}
 `

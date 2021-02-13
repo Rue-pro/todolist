@@ -1,7 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { AddTaskBtnStyled } from './styles'
 
-export const AddTaskBtn = (props: any) => {
-  const { clickAddTaskBtnHandler } = props
-  return <AddTaskBtnStyled onClick={clickAddTaskBtnHandler}></AddTaskBtnStyled>
+interface IAddTaskBtnProps extends React.HTMLAttributes<HTMLDivElement> {
+  openModal(e: React.MouseEvent<HTMLButtonElement>): void
+}
+
+export const AddTaskBtn = (props: IAddTaskBtnProps): JSX.Element => {
+  const { openModal } = props
+  return <AddTaskBtnStyled onClick={openModal}></AddTaskBtnStyled>
 }

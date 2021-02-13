@@ -13,7 +13,7 @@ export interface IAddTaskProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode
 }
 
-export const AddTask = (): React.ReactElement => {
+export const AddTask = (): JSX.Element => {
   const options: Array<ITaskOption> = [
     {
       value: 'approved',
@@ -44,7 +44,9 @@ export const AddTask = (): React.ReactElement => {
   ]
   return (
     <>
-      <Title type={TitleTypeEnum.h2}>New task</Title>
+      <Title type={TitleTypeEnum.h2} style={{ marginBottom: '20px' }}>
+        New task
+      </Title>
       <Input placeholder="Task" />
       <Select options={options} />
       <Select options={taskTypes} />

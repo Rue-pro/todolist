@@ -14,6 +14,11 @@ export interface ITitleProps extends React.HTMLAttributes<HTMLDivElement> {
   type: TitleTypeEnum
 }
 
-export const Title = ({ children, type }: ITitleProps): React.ReactElement => {
-  return <TitleStyled type={type}>{children}</TitleStyled>
+export const Title = ({ children, type, ...rest }: ITitleProps): JSX.Element => {
+  console.log(rest)
+  return (
+    <TitleStyled type={type} {...rest} style={{ marginBottom: '20px' }}>
+      {children}
+    </TitleStyled>
+  )
 }

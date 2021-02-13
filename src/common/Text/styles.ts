@@ -4,8 +4,6 @@ import { colors } from '../constants'
 interface ITextStyledProps {
   color?: string
   disabled?: boolean
-  primary?: boolean
-  secondary?: boolean
 }
 
 export const TextStyled = styled.span<ITextStyledProps>`
@@ -13,10 +11,10 @@ export const TextStyled = styled.span<ITextStyledProps>`
   font-size: 16px;
   text-align: left;
   ${(props) => {
-    const { primary, secondary, disabled, color } = props
+    const { disabled, color } = props
     if (!disabled) {
       return css`
-        color: ${color || (primary && '#FFFFFF') || (secondary && colors.text_secondary) || colors.text};
+        color: ${color} || 'black';
       `
     }
     return css`

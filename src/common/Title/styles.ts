@@ -5,7 +5,7 @@ export interface ITitleStyledProps {
   type: TitleTypeEnum
 }
 
-export const TitleStyled = styled.span<ITitleStyledProps>`
+export const TitleStyled = styled.h1<ITitleStyledProps>`
   color: #000000;
   font-weight: 500;
   text-align: left;

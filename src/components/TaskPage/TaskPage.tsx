@@ -1,24 +1,36 @@
 import React, { useState } from 'react'
-import { AddTask } from '../AddTask/AddTask'
+import ReactDom from 'react-dom'
 import { AddTaskBtn } from '../AddTaskBtn/AddTaskBtn'
 import { Tasks } from '../Tasks/Tasks'
 import { Popup } from '../../common/Popup/Popup'
+import { AddTask } from '../AddTask/AddTask'
 
-export const TaskPage = () => {
-  const [showPopup, setShowPopup] = useState(false)
+export interface ITaskPageProps extends React.HTMLAttributes<HTMLDivElement> {
+  children?: React.ReactNode
+}
 
-  const clickAddTaskBtnHandler = () => {
-    setShowPopup(true)
+export const TaskPage = (): React.ReactElement => {
+  const [isModalOpen, setModalOpen] = useState(false)
+  const portal: HTMLElement = document.getElementById('portal') || document.createElement('div')
+
+  const openModal = (): void => {
+    setModalOpen(true)
   }
+  const closeModal = (): void => {
+    setModalOpen(false)
+  }
+
   return (
     <>
       <Tasks />
-      <AddTaskBtn clickAddTaskBtnHandler={clickAddTaskBtnHandler} />
-      {showPopup && (
-        <Popup showPopup={showPopup} setShowPopup={setShowPopup}>
-          <AddTask />
-        </Popup>
-      )}
+      <AddTaskBtn openModal={openModal} />
+      {isModalOpen &&
+        ReactDom.createPortal(
+          <Popup closeModal={closeModal}>
+            <AddTask />
+          </Popup>,
+          portal
+        )}
     </>
   )
 }

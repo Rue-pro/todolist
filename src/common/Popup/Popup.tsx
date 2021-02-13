@@ -1,20 +1,28 @@
-import React, { useRef } from 'react'
-import { PopupStyles } from './styles'
-import { useOnClickOutside } from '../hooks'
+import React, { useEffect } from 'react'
+import { PopupStyles, PopupBgStyles } from './styles'
 import { Dispatch, SetStateAction } from 'react'
+
+export type setShowPopupType = Dispatch<SetStateAction<boolean>>
 
 export interface IPopupProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode
-  setShowPopup: Dispatch<SetStateAction<boolean>>
+  closeModal(): void
 }
 
-export const Popup = (props: IPopupProps): React.ReactElement => {
-  const { children, setShowPopup } = props
-  const popupRef = useRef<HTMLDivElement>(null)
+export const Popup = (props: IPopupProps): JSX.Element => {
+  const { children, closeModal } = props
 
-  useOnClickOutside(popupRef, () => {
-    setShowPopup(false)
+  useEffect(() => {
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.body.style.overflow = 'unset'
+    }
   })
 
-  return <PopupStyles ref={popupRef}>{children}</PopupStyles>
+  return (
+    <>
+      <PopupBgStyles onClick={closeModal}></PopupBgStyles>
+      <PopupStyles>{children}</PopupStyles>
+    </>
+  )
 }

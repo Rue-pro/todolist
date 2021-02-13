@@ -51,7 +51,7 @@ export const Tasks = (): React.ReactElement => {
           }
 
           return (
-            <Task key={`task_${task.id}`} badgeType={badgeType} badgeText={task.status}>
+            <Task key={`task_${task.id}`} badgeType={badgeType} badgeText={task.status} checkboxId={task.id}>
               {task.text}
             </Task>
           )

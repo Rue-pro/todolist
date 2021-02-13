@@ -1,9 +1,10 @@
 import styled, { css } from 'styled-components'
 import { colors } from '../constants'
+import { ButtonTypeEnum } from './Button'
 
 interface IButtonStyledProps {
+  btnType: ButtonTypeEnum
   disabled?: boolean
-  primary?: boolean
 }
 
 export const ButtonStyled = styled.button<IButtonStyledProps>`
@@ -17,32 +18,33 @@ export const ButtonStyled = styled.button<IButtonStyledProps>`
   cursor: pointer;
 
   ${(props) => {
-    const { primary, disabled } = props
+    const { btnType, disabled } = props
     if (!disabled) {
       return css`
+        color: #ffffff;
         background: linear-gradient(45deg, ${colors.btn_primary_focus}, ${colors.btn_primary});
         background-color: ${colors.btn_primary};
         &.hover,
         &:hover {
           background: linear-gradient(45deg, ${colors.btn_primary_focus}, ${colors.btn_primary_hover});
-          background-color: ${(primary && `${colors.btn_primary_hover}`) || 'black'};
+          background-color: ${(btnType === ButtonTypeEnum.primary && `${colors.btn_primary_hover}`) || 'black'};
         }
 
         &.focus,
         &:focus {
           background: linear-gradient(45deg, ${colors.btn_primary_active}, ${colors.btn_primary_focus});
-          background-color: ${(primary && `${colors.btn_primary_focus}`) || 'black'};
+          background-color: ${(btnType === ButtonTypeEnum.primary && `${colors.btn_primary_focus}`) || 'black'};
         }
 
         &.active,
         &:active {
           background: linear-gradient(45deg, ${colors.btn_primary_hover}, ${colors.btn_primary_active});
-          background-color: ${(primary && `${colors.btn_primary_active}`) || 'black'};
+          background-color: ${(btnType === ButtonTypeEnum.primary && `${colors.btn_primary_active}`) || 'black'};
         }
       `
     }
     return css`
-      background-color: ${(primary && `${colors.btn_primary_disable}`) || 'black'};
+      background-color: ${(btnType === ButtonTypeEnum.primary && `${colors.btn_primary_disable}`) || 'black'};
     `
   }}
 `
