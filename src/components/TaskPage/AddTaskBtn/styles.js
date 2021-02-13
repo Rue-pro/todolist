@@ -1,6 +1,6 @@
 import styled from 'styled-components'
-import { colors } from '../../common/constants'
-import AddTask from '../../static/images/add_icon.svg'
+import { colors } from '../../../common/constants'
+import AddTask from '../../../static/images/add_icon.svg'
 
 export const AddTaskBtnStyled = styled.button`
   position: fixed;

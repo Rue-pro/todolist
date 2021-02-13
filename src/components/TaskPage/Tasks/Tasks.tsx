@@ -1,8 +1,8 @@
 import React from 'react'
 import { TasksStyled } from './styles'
 import { Task } from '../Task/Task'
-import { Text } from '../../common/Text/Text'
-import { BadgeTypeEnum } from '../../common/Badge/Badge'
+import { Text } from '../../../common/Text/Text'
+import { BadgeTypeEnum } from '../../../common/Badge/Badge'
 
 export interface ITasksProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactElement

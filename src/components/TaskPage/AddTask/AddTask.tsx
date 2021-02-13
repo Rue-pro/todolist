@@ -1,8 +1,8 @@
 import React from 'react'
-import { Input } from '../../common/Input/Input'
-import { Select } from '../../common/Select/Select'
-import { Button, ButtonTypeEnum } from '../../common/Button/Button'
-import { Title, TitleTypeEnum } from '../../common/Title/Title'
+import { Input } from '../../../common/Input/Input'
+import { Select } from '../../../common/Select/Select'
+import { Button, ButtonTypeEnum } from '../../../common/Button/Button'
+import { Title, TitleTypeEnum } from '../../../common/Title/Title'
 
 export interface ITaskOption {
   value: 'approved' | 'in progress' | 'in review' | 'waiting'
