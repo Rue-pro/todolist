@@ -1,7 +1,7 @@
 import React from 'react'
 import { InputStyles } from './styles'
 
-export interface IInputProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface IInputProps extends React.HTMLAttributes<HTMLInputElement> {
   children?: React.ReactNode
 }
 

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { SelectStyles, SelectSelectedValStyles, SelectOptionsStyles, SelectOptionStyles } from './styles'
 
 export type TSelectOption = {
@@ -6,11 +6,12 @@ export type TSelectOption = {
   text: string
 }
 
-export interface ISelectProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ISelectProps extends React.HTMLAttributes<HTMLSelectElement> {
   options: Array<TSelectOption>
+  onChangeSelect?(selected: TSelectOption): void
 }
 
-export const Select = ({ options }: ISelectProps): JSX.Element => {
+export const Select = ({ options, onChangeSelect, ...rest }: ISelectProps): JSX.Element => {
   const [selected, setSelected] = useState({
     value: options[0].value,
     text: options[0].text
@@ -32,9 +33,15 @@ export const Select = ({ options }: ISelectProps): JSX.Element => {
     setShowOptions(false)
   }
 
+  useEffect(() => {
+    if (onChangeSelect) {
+      onChangeSelect(selected)
+    }
+  }, [selected])
+
   return options ? (
     <>
-      <select className="myselect1" style={{ display: 'none' }} value={selected.value}>
+      <select className="myselect1" style={{ display: 'none' }} value={selected.value} {...rest}>
         {options.map((option: TSelectOption) => {
           return (
             <option key={option.value} defaultValue={option.value}>

@@ -6,15 +6,15 @@ export enum ButtonTypeEnum {
   primary
 }
 
-export interface IButtonProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   children?: React.ReactNode
   type?: ButtonTypeEnum
   disabled?: boolean
 }
 
-export const Button = ({ children, type, disabled }: IButtonProps): JSX.Element => {
+export const Button = ({ children, type, disabled, ...rest }: IButtonProps): JSX.Element => {
   return (
-    <ButtonStyled disabled={disabled} btnType={type || ButtonTypeEnum.primary}>
+    <ButtonStyled disabled={disabled} btnType={type || ButtonTypeEnum.primary} {...rest}>
       <Text>{children}</Text>
     </ButtonStyled>
   )
