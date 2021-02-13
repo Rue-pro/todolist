@@ -1,24 +1,31 @@
 import React from 'react'
-import { TitleStyled } from './styles'
+import { TitleH1Styled, TitleH2Styled, TitleH3Styled, TitleH4Styled, TitleH5Styled } from './styles'
 
 export enum TitleTypeEnum {
   h1,
   h2,
   h3,
-  pM,
-  pS
+  h4,
+  h5
 }
 
-export interface ITitleProps extends React.HTMLAttributes<HTMLDivElement> {
+export interface ITitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
   children?: React.ReactNode
   type: TitleTypeEnum
 }
 
 export const Title = ({ children, type, ...rest }: ITitleProps): JSX.Element => {
-  console.log(rest)
-  return (
-    <TitleStyled type={type} {...rest} style={{ marginBottom: '20px' }}>
-      {children}
-    </TitleStyled>
-  )
+  if (type === TitleTypeEnum.h2) {
+    return <TitleH2Styled {...rest}>{children}</TitleH2Styled>
+  }
+  if (type === TitleTypeEnum.h3) {
+    return <TitleH3Styled {...rest}>{children}</TitleH3Styled>
+  }
+  if (type === TitleTypeEnum.h4) {
+    return <TitleH4Styled {...rest}>{children}</TitleH4Styled>
+  }
+  if (type === TitleTypeEnum.h5) {
+    return <TitleH5Styled {...rest}>{children}</TitleH5Styled>
+  }
+  return <TitleH1Styled {...rest}>{children}</TitleH1Styled>
 }

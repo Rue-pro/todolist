@@ -12,7 +12,7 @@ export const CheckboxLabelStyled = styled.label<TCheckboxLabelStyledProps>`
   width: 20px;
   height: 20px;
   cursor: pointer;
-  border-radius: 7px;
+  border-radius: 4px;
 
   &:after {
     content: '';

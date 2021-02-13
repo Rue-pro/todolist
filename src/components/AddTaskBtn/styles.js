@@ -6,6 +6,7 @@ export const AddTaskBtnStyled = styled.button`
   position: fixed;
   bottom: 6%;
   left: 4%;
+  z-index: 9996;
   width: 48px;
   height: 48px;
   border: none;
@@ -22,6 +23,7 @@ export const AddTaskBtnStyled = styled.button`
     position: absolute;
     top: 5px;
     left: 6px;
+    z-index: 9997;
     width: 36px;
     height: 36px;
     background-image: url(${AddTask});

@@ -10,8 +10,8 @@ export const Typography = (): React.ReactElement => {
       <Title type={TitleTypeEnum.h1}>H1</Title>
       <Title type={TitleTypeEnum.h2}>H2</Title>
       <Title type={TitleTypeEnum.h3}>H3</Title>
-      <Title type={TitleTypeEnum.pM}>Paragraph M</Title>
-      <Title type={TitleTypeEnum.pS}>Paragraph S</Title>
+      <Title type={TitleTypeEnum.h4}>H4</Title>
+      <Title type={TitleTypeEnum.h5}>H5</Title>
     </TypographyStyled>
   )
 }

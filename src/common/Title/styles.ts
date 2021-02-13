@@ -1,24 +1,34 @@
 import styled, { css } from 'styled-components'
-import { TitleTypeEnum } from './Title'
 
-export interface ITitleStyledProps {
-  type: TitleTypeEnum
-}
-
-export const TitleStyled = styled.h1<ITitleStyledProps>`
+const TitleStyles = css`
   color: #000000;
   font-weight: 500;
   text-align: left;
+  line-height: normal;
+  margin: 0;
+`
 
-  ${(props) => {
-    const { type } = props
-    return css`
-      font-size: ${(type === TitleTypeEnum.h1 && '48px') ||
-      (type === TitleTypeEnum.h2 && '32px') ||
-      (type === TitleTypeEnum.h3 && '24px') ||
-      (type === TitleTypeEnum.pM && '18px') ||
-      (type === TitleTypeEnum.pS && '16px') ||
-      '48px'};
-    `
-  }}
+export const TitleH1Styled = styled.h1`
+  ${TitleStyles}
+  font-size: 48px;
+`
+
+export const TitleH2Styled = styled.h2`
+  ${TitleStyles}
+  font-size: 32px;
+`
+
+export const TitleH3Styled = styled.h3`
+  ${TitleStyles}
+  font-size: 24px;
+`
+
+export const TitleH4Styled = styled.h4`
+  ${TitleStyles}
+  font-size: 18px;
+`
+
+export const TitleH5Styled = styled.h5`
+  ${TitleStyles}
+  font-size: 16px;
 `
