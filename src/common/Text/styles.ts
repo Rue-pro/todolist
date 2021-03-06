@@ -14,7 +14,7 @@ export const TextStyled = styled.span<ITextStyledProps>`
     const { disabled, color } = props
     if (!disabled) {
       return css`
-        color: ${color} || 'black';
+        color: ${color || 'black'};
       `
     }
     return css`

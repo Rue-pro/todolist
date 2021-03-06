@@ -20,3 +20,9 @@ export const colors = {
   btn_primary_disable: '#ACA0D2',
   shadow_primary: 'rgba(98, 60, 231, 0.25)'
 }
+
+export const BASE_PATH = ''
+export const SEARCH_PATH = '/seatch'
+export const SEARCH_PARAM = 'query='
+export const PAGE_HITS = 'hitPerPage'
+export const PAGE_PARAM = 'page='
