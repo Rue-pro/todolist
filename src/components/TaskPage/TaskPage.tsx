@@ -22,7 +22,7 @@ export const TaskPage = (): React.ReactElement => {
   }
 
   return (
-    <>
+    <div role="main">
       <Tasks Skeleton={<TasksSkeleton />} />
       <AddTaskBtn openModal={openModal} />
       {isModalOpen &&
@@ -32,6 +32,6 @@ export const TaskPage = (): React.ReactElement => {
           </Popup>,
           portal
         )}
-    </>
+    </div>
   )
 }

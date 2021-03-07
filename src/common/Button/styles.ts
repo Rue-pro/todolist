@@ -17,11 +17,14 @@ export const ButtonStyled = styled.button<IButtonStyledProps>`
   outline: none;
   cursor: pointer;
 
+  & > span {
+    color: #ffffff;
+  }
+
   ${(props) => {
     const { btnType, disabled } = props
     if (!disabled) {
       return css`
-        color: #ffffff;
         background: linear-gradient(45deg, ${colors.btn_primary_focus}, ${colors.btn_primary});
         background-color: ${colors.btn_primary};
         &.hover,

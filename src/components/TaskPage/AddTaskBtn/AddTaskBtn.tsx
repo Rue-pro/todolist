@@ -7,5 +7,5 @@ interface IAddTaskBtnProps extends React.HTMLAttributes<HTMLDivElement> {
 
 export const AddTaskBtn = (props: IAddTaskBtnProps): JSX.Element => {
   const { openModal } = props
-  return <AddTaskBtnStyled onClick={openModal}></AddTaskBtnStyled>
+  return <AddTaskBtnStyled aria-label="Add task" onClick={openModal}></AddTaskBtnStyled>
 }
