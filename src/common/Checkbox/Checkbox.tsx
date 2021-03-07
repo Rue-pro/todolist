@@ -16,8 +16,15 @@ export const Checkbox = ({ checkboxId, ...rest }: ICheckboxProps): JSX.Element =
 
   return (
     <>
-      <CheckboxLabelStyled htmlFor={id} checked={checked} aria-label={ariaLabel} {...rest}>
-        <input id={id} type="checkbox" onChange={handleChange} checked={checked} style={{ display: 'none' }} />
+      <CheckboxLabelStyled htmlFor={id} checked={checked} {...rest}>
+        <input
+          id={id}
+          type="checkbox"
+          onChange={handleChange}
+          checked={checked}
+          style={{ display: 'none' }}
+          title={ariaLabel}
+        />
       </CheckboxLabelStyled>
     </>
   )

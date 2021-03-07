@@ -1,10 +1,10 @@
 import styled from 'styled-components'
 
-export const TasksStyled = styled.div`
+export const TasksStyled = styled.ol`
   display: flex;
   flex-direction: column;
 
-  & > div {
+  & > li {
     margin-bottom: 20px;
   }
 `

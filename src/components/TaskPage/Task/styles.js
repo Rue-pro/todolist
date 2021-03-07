@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const TaskStyled = styled.div`
+export const TaskStyled = styled.li`
   display: flex;
   align-items: center;
   justify-content: space-between;

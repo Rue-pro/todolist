@@ -3,7 +3,7 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 
 const TaskSkeleton: React.FC = () => {
   return (
-    <div style={{ marginBottom: '20px' }}>
+    <li style={{ marginBottom: '20px' }}>
       <SkeletonTheme>
         <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           <Skeleton height={20} width={20} style={{ marginRight: '20px' }} />
@@ -13,17 +13,17 @@ const TaskSkeleton: React.FC = () => {
           <Skeleton height={48} width={130} style={{ borderRadius: '23px' }} />
         </div>
       </SkeletonTheme>
-    </div>
+    </li>
   )
 }
 
 const TasksSkeleton: React.FC = () => {
   return (
-    <>
+    <ul>
       <TaskSkeleton />
       <TaskSkeleton />
       <TaskSkeleton />
-    </>
+    </ul>
   )
 }
 

@@ -13,7 +13,7 @@ export const SelectSelectedValStyles = styled.div`
   cursor: pointer;
 `
 
-export const SelectOptionsStyles = styled.div`
+export const SelectOptionsStyles = styled.ul`
   position: absolute;
   z-index: 1;
   display: flex;
@@ -26,7 +26,7 @@ export type TSelectOptionStyles = {
   isSelected: boolean
 }
 
-export const SelectOptionStyles = styled.span<TSelectOptionStyles>`
+export const SelectOptionStyles = styled.li<TSelectOptionStyles>`
   padding: 8.5px 15px;
   border-bottom: 1px solid ${colors.gray_light};
   cursor: pointer;
