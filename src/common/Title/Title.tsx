@@ -14,7 +14,7 @@ export interface ITitleProps extends React.HTMLAttributes<HTMLHeadingElement> {
   type: TitleTypeEnum
 }
 
-export const Title = ({ children, type, ...rest }: ITitleProps): JSX.Element => {
+const Title = ({ children, type, ...rest }: ITitleProps): JSX.Element => {
   if (type === TitleTypeEnum.h2) {
     return <TitleH2Styled {...rest}>{children}</TitleH2Styled>
   }
@@ -29,3 +29,5 @@ export const Title = ({ children, type, ...rest }: ITitleProps): JSX.Element => 
   }
   return <TitleH1Styled {...rest}>{children}</TitleH1Styled>
 }
+
+export default Title

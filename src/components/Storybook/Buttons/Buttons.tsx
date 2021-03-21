@@ -1,9 +1,8 @@
 import React from 'react'
 import { ButtonsStyled } from './styles'
-import { Button } from '../../../common/Button/Button'
-import { ButtonTypeEnum } from '../../../common/Button/Button'
+import Button, { ButtonTypeEnum } from '../../../common/Button/Button'
 
-export const Buttons = (): React.ReactElement => {
+const Buttons = (): React.ReactElement => {
   return (
     <ButtonsStyled>
       Primary button
@@ -23,3 +22,5 @@ export const Buttons = (): React.ReactElement => {
     </ButtonsStyled>
   )
 }
+
+export default Buttons

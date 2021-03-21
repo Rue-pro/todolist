@@ -1,9 +1,9 @@
 import React from 'react'
 import { TypographyStyled } from './styles'
 import Text from '../../../common/Text/Text'
-import { Title, TitleTypeEnum } from '../../../common/Title/Title'
+import Title, { TitleTypeEnum } from '../../../common/Title/Title'
 
-export const Typography = (): React.ReactElement => {
+const Typography = (): React.ReactElement => {
   return (
     <TypographyStyled>
       <Text>Text</Text>
@@ -15,3 +15,5 @@ export const Typography = (): React.ReactElement => {
     </TypographyStyled>
   )
 }
+
+export default Typography

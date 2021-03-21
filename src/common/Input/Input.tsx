@@ -5,4 +5,6 @@ export interface IInputProps extends React.HTMLAttributes<HTMLInputElement> {
   children?: React.ReactNode
 }
 
-export const Input = (props: IInputProps): JSX.Element => <InputStyles {...props} />
+const Input = (props: IInputProps): JSX.Element => <InputStyles {...props} />
+
+export default Input

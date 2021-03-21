@@ -2,7 +2,7 @@ import React from 'react'
 import { colors } from '../../../common/constants'
 import { ColorsStyled, ColorsHeaderStyled, ColorsRowStyled, ColorsColorStyled } from './styles'
 
-export const Colors = (): React.ReactElement => {
+const Colors = (): React.ReactElement => {
   return (
     <ColorsStyled>
       <ColorsHeaderStyled>
@@ -24,3 +24,5 @@ export const Colors = (): React.ReactElement => {
     </ColorsStyled>
   )
 }
+
+export default Colors

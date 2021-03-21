@@ -12,10 +12,12 @@ export interface IButtonProps extends React.HTMLAttributes<HTMLButtonElement> {
   disabled?: boolean
 }
 
-export const Button = ({ children, type, disabled, ...rest }: IButtonProps): JSX.Element => {
+const Button = ({ children, type, disabled, ...rest }: IButtonProps): JSX.Element => {
   return (
     <ButtonStyled disabled={disabled} btnType={type || ButtonTypeEnum.primary} {...rest}>
       <Text>{children}</Text>
     </ButtonStyled>
   )
 }
+
+export default Button

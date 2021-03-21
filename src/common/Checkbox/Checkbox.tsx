@@ -6,7 +6,7 @@ export interface ICheckboxProps extends React.HTMLAttributes<HTMLLabelElement> {
   checkboxId: string
 }
 
-export const Checkbox = ({ checkboxId, ...rest }: ICheckboxProps): JSX.Element => {
+const Checkbox = ({ checkboxId, ...rest }: ICheckboxProps): JSX.Element => {
   const [checked, setChecked] = useState(false)
   const id = checkboxId ? checkboxId : `checkbox_${Math.random().toString().replace(/0\./, '')}`
   const ariaLabel = checked ? 'Uncheck task with id' + checkboxId : 'Check task with id' + checkboxId
@@ -29,3 +29,5 @@ export const Checkbox = ({ checkboxId, ...rest }: ICheckboxProps): JSX.Element =
     </>
   )
 }
+
+export default Checkbox

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import ReactDom from 'react-dom'
 import { AddTaskBtn } from './AddTaskBtn/AddTaskBtn'
-import { Popup } from '../../common/Popup/Popup'
+import Popup from '../../common/Popup/Popup'
 import { AddTask } from './AddTask/AddTask'
 import Tasks from './Tasks/Tasks'
 import TasksSkeleton from './Tasks/TasksSkeleton/TasksSkeleton'

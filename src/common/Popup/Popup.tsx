@@ -9,7 +9,7 @@ export interface IPopupProps extends React.HTMLAttributes<HTMLDivElement> {
   closeModal(): void
 }
 
-export const Popup = (props: IPopupProps): JSX.Element => {
+const Popup = (props: IPopupProps): JSX.Element => {
   const { children, closeModal } = props
 
   useEffect(() => {
@@ -26,3 +26,5 @@ export const Popup = (props: IPopupProps): JSX.Element => {
     </>
   )
 }
+
+export default Popup

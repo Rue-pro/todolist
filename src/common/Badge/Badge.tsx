@@ -15,7 +15,7 @@ export interface IBadgeProps extends React.HTMLAttributes<HTMLDivElement> {
   type?: BadgeTypeEnum
 }
 
-export const Badge = ({ children, type }: IBadgeProps): JSX.Element => {
+const Badge = ({ children, type }: IBadgeProps): JSX.Element => {
   let color = 'black'
   let bgColor = 'black'
   switch (type) {
@@ -44,3 +44,5 @@ export const Badge = ({ children, type }: IBadgeProps): JSX.Element => {
     )) || <></>
   )
 }
+
+export default Badge

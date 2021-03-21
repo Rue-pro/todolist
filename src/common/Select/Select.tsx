@@ -11,7 +11,7 @@ export interface ISelectProps extends React.HTMLAttributes<HTMLSelectElement> {
   onChangeSelect?(selected: TSelectOption): void
 }
 
-export const Select = ({ options, onChangeSelect, ...rest }: ISelectProps): JSX.Element => {
+const Select = ({ options, onChangeSelect, ...rest }: ISelectProps): JSX.Element => {
   const [selected, setSelected] = useState({
     value: options[0].value,
     text: options[0].text
@@ -74,3 +74,5 @@ export const Select = ({ options, onChangeSelect, ...rest }: ISelectProps): JSX.
     <>Нет элементов для выбора</>
   )
 }
+
+export default Select

@@ -1,9 +1,8 @@
 import React from 'react'
 import { TaskStyled } from './styles'
-import { Badge } from '../../../common/Badge/Badge'
-import { Checkbox } from '../../../common/Checkbox/Checkbox'
+import Badge, { BadgeTypeEnum } from '../../../common/Badge/Badge'
+import Checkbox from '../../../common/Checkbox/Checkbox'
 import Text from '../../../common/Text/Text'
-import { BadgeTypeEnum } from '../../../common/Badge/Badge'
 
 export interface ITaskProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: string
