@@ -14,7 +14,6 @@ export const ButtonStyled = styled.button<IButtonStyledProps>`
   padding: 12px 18px;
   border: none;
   border-radius: 23px;
-  outline: none;
   cursor: pointer;
 
   & > span {

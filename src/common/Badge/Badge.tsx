@@ -1,6 +1,6 @@
 import React from 'react'
 import { colors } from '../constants'
-import { Text } from '../Text/Text'
+import Text from '../Text/Text'
 import { BadgeStyled } from './styles'
 
 export enum BadgeTypeEnum {

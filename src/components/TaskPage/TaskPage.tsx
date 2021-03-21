@@ -5,6 +5,8 @@ import { Popup } from '../../common/Popup/Popup'
 import { AddTask } from './AddTask/AddTask'
 import Tasks from './Tasks/Tasks'
 import TasksSkeleton from './Tasks/TasksSkeleton/TasksSkeleton'
+import Tab, { TTabProps } from '../../common/Tab/Tab'
+import api from '../../api/api'
 
 export interface ITaskPageProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode
@@ -21,9 +23,20 @@ export const TaskPage = (): React.ReactElement => {
     setModalOpen(false)
   }
 
+  const tabsPayload: Array<TTabProps> = [
+    {
+      title: 'All',
+      body: <Tasks type={'all'} Skeleton={<TasksSkeleton />} />
+    },
+    {
+      title: 'Important',
+      body: <Tasks type={'important'} Skeleton={<TasksSkeleton />} />
+    }
+  ]
+
   return (
     <div role="main">
-      <Tasks Skeleton={<TasksSkeleton />} />
+      <Tab getCounts={api.tasks.getTasksCounts()} tabsPayload={tabsPayload} />
       <AddTaskBtn openModal={openModal} />
       {isModalOpen &&
         ReactDom.createPortal(
