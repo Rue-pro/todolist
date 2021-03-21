@@ -51,7 +51,12 @@ const Tasks: React.FC<ITasksProps> = ({ type, Skeleton }) => {
               }
 
               return (
-                <Task key={`task_${task.id}`} badgeType={badgeType} badgeText={task.status} checkboxId={task.id}>
+                <Task
+                  key={`task_${task.id + '_' + type}`}
+                  badgeType={badgeType}
+                  badgeText={task.status}
+                  checkboxId={task.id + '_' + type}
+                >
                   {task.text}
                 </Task>
               )
