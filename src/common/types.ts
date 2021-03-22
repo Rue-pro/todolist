@@ -1,7 +1,7 @@
 export type TNewTask = {
-  text: string | null
-  status: string | null
-  type: string | null
+  text: string
+  status: string
+  type: string
 }
 
 export type TTask = {

@@ -26,11 +26,11 @@ export const TaskPage = (): React.ReactElement => {
   const tabsPayload: Array<TTabProps> = [
     {
       title: 'All',
-      body: <Tasks type={'all'} Skeleton={<TasksSkeleton />} />
+      body: <Tasks type={'all'} Skeleton={<TasksSkeleton />} openModal={openModal} />
     },
     {
       title: 'Important',
-      body: <Tasks type={'important'} Skeleton={<TasksSkeleton />} />
+      body: <Tasks type={'important'} Skeleton={<TasksSkeleton />} openModal={openModal} />
     }
   ]
 
@@ -41,7 +41,7 @@ export const TaskPage = (): React.ReactElement => {
       {isModalOpen &&
         ReactDom.createPortal(
           <Popup closeModal={closeModal}>
-            <AddTask />
+            <AddTask closeModal={closeModal} />
           </Popup>,
           portal
         )}

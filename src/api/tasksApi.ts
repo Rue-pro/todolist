@@ -1,4 +1,4 @@
-import { TTask } from '../common/types'
+import { TTask, TNewTask } from '../common/types'
 
 const fakeTasks = [
   {
@@ -58,9 +58,10 @@ const getTask = (id: number): Promise<TTask> => {
   })
 }
 
-const setTask = (task: TTask): Promise<string> => {
+const addTask = (task: TNewTask): Promise<string> => {
   return new Promise<string>((resolve) => {
-    fakeTasks.push(task)
+    fakeTasks.push({ id: fakeTasks.length, ...task })
+    console.log(fakeTasks)
     setTimeout(() => resolve('ok'), 10000)
   })
 }
@@ -74,7 +75,8 @@ const updateTask = (task: TTask): Promise<TTask[]> => {
 
 const tasks = {
   getTasksCounts,
-  getTasks
+  getTasks,
+  addTask
 }
 
 export default tasks

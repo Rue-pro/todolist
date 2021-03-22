@@ -3,6 +3,7 @@ import Input from '../../../common/Input/Input'
 import Select, { TSelectOption } from '../../../common/Select/Select'
 import Button, { ButtonTypeEnum } from '../../../common/Button/Button'
 import Title, { TitleTypeEnum } from '../../../common/Title/Title'
+import api from '../../../api/api'
 
 export interface ITaskOption {
   value: 'approved' | 'in progress' | 'in review' | 'waiting'
@@ -11,17 +12,19 @@ export interface ITaskOption {
 
 export interface IAddTaskProps extends React.HTMLAttributes<HTMLDivElement> {
   children?: React.ReactNode
+  closeModal(): void
 }
 
-export const AddTask = (): JSX.Element => {
+export const AddTask = ({ closeModal }: IAddTaskProps): JSX.Element => {
   const [currentTask, setCurrentTask] = useState({
-    name: '',
+    id: null,
+    text: '',
     status: '',
     type: ''
   })
-  const handleChangeName = (e: React.FormEvent<HTMLInputElement>) => {
+  const handleChangeText = (e: React.FormEvent<HTMLInputElement>) => {
     const newTask = currentTask
-    newTask.name = e.currentTarget.value
+    newTask.text = e.currentTarget.value
     setCurrentTask(newTask)
   }
   const handleChangeStatus = (selected: TSelectOption) => {
@@ -34,9 +37,17 @@ export const AddTask = (): JSX.Element => {
     newTask.type = selected.value
     setCurrentTask(newTask)
   }
+
   const validate = () => {
     console.log('Validation')
   }
+
+  const postSaveTask = () => {
+    validate()
+    api.tasks.addTask(currentTask)
+    closeModal()
+  }
+
   const options: Array<ITaskOption> = [
     {
       value: 'approved',
@@ -73,12 +84,12 @@ export const AddTask = (): JSX.Element => {
       <Input
         placeholder="Task"
         onChange={(e) => {
-          handleChangeName(e)
+          handleChangeText(e)
         }}
       />
       <Select options={options} onChangeSelect={handleChangeStatus} />
       <Select options={taskTypes} onChangeSelect={handleChangeType} />
-      <Button type={ButtonTypeEnum.primary} onClick={validate}>
+      <Button type={ButtonTypeEnum.primary} onClick={postSaveTask}>
         Save
       </Button>
     </>

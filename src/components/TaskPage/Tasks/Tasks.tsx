@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { TasksStyled } from './styles'
-import { Task } from '../Task/Task'
+import Task from '../Task/Task'
 import Text from '../../../common/Text/Text'
 import { BadgeTypeEnum } from '../../../common/Badge/Badge'
 import { TTask } from '../../../common/types'
@@ -9,9 +9,10 @@ import api from '../../../api/api'
 export interface ITasksProps extends React.HTMLAttributes<HTMLDivElement> {
   type: 'all' | 'important' | 'notes' | 'links'
   Skeleton?: React.ReactNode
+  openModal(): void
 }
 
-const Tasks: React.FC<ITasksProps> = ({ type, Skeleton }) => {
+const Tasks: React.FC<ITasksProps> = ({ type, Skeleton, openModal }) => {
   const [tasks, setTasks] = useState<TTask[]>([])
   const [fetchStatus, setFetchStatus] = useState<'loading' | 'loaded'>('loading')
 
@@ -56,6 +57,7 @@ const Tasks: React.FC<ITasksProps> = ({ type, Skeleton }) => {
                   badgeType={badgeType}
                   badgeText={task.status}
                   checkboxId={task.id + '_' + type}
+                  onClick={openModal}
                 >
                   {task.text}
                 </Task>
