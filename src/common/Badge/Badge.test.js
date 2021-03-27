@@ -21,15 +21,15 @@ describe('Badge', () => {
     const output = shallow(<Badge type={BadgeTypeEnum.waiting}>waiting badge</Badge>)
     expect(shallowToJson(output)).toMatchSnapshot()
   })
-  it('wrong props type', () => {
+  it('should render correctly with wrong props type', () => {
     const output = shallow(<Badge type="approved">wrong type badge</Badge>)
     expect(shallowToJson(output)).toMatchSnapshot()
   })
-  it('no props children', () => {
+  it('should render correctly with no props children', () => {
     const output = shallow(<Badge type={BadgeTypeEnum.approved}></Badge>)
     expect(shallowToJson(output)).toMatchSnapshot()
   })
-  it('no props', () => {
+  it('should render correctly with no props', () => {
     const output = shallow(<Badge />)
     expect(shallowToJson(output)).toMatchSnapshot()
   })

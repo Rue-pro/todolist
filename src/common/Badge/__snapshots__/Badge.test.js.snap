@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Badge no props 1`] = `<Fragment />`;
+exports[`Badge should render correctly with no props 1`] = `<Fragment />`;
 
-exports[`Badge no props children 1`] = `<Fragment />`;
+exports[`Badge should render correctly with no props children 1`] = `<Fragment />`;
 
 exports[`Badge should render correctly with type=approved 1`] = `
 <styled.div
@@ -56,7 +56,7 @@ exports[`Badge should render correctly with type=waiting 1`] = `
 </styled.div>
 `;
 
-exports[`Badge wrong props type 1`] = `
+exports[`Badge should render correctly with wrong props type 1`] = `
 <styled.div
   bgColor="black"
   color="black"

@@ -1,0 +1,48 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Button should render correctly with no props 1`] = `
+<styled.button
+  btnType={0}
+>
+  <Text />
+</styled.button>
+`;
+
+exports[`Button should render correctly with no props children 1`] = `
+<styled.button
+  btnType={0}
+>
+  <Text />
+</styled.button>
+`;
+
+exports[`Button should render correctly with type=primary and disabled=true 1`] = `
+<styled.button
+  btnType={0}
+  disabled={true}
+>
+  <Text>
+    primary button
+  </Text>
+</styled.button>
+`;
+
+exports[`Button should render correctly with type=primary and no disabled 1`] = `
+<styled.button
+  btnType={0}
+>
+  <Text>
+    primary button
+  </Text>
+</styled.button>
+`;
+
+exports[`Button should render correctly with wrong props type 1`] = `
+<styled.button
+  btnType="primary"
+>
+  <Text>
+    wrong type button
+  </Text>
+</styled.button>
+`;
