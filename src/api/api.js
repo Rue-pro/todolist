@@ -1,12 +1,9 @@
-import tasks from './tasksApi'
+import tasksMock from './TasksAPI/tasksApiMock'
 
 const mockAPI = {
-  tasks
+  tasks: tasksMock
 }
-const serverAPI = {
-  getCategories: () => fetch('/categories'),
-  getCategory: (id) => fetch('/categories/' + id)
-}
+
 const api = mockAPI
 
 export default api

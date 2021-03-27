@@ -9,7 +9,7 @@ import api from '../../../api/api'
 export interface ITasksProps extends React.HTMLAttributes<HTMLDivElement> {
   type: 'all' | 'important' | 'notes' | 'links'
   Skeleton?: React.ReactNode
-  openModal(): void
+  openModal(task: TTask): void
 }
 
 const Tasks: React.FC<ITasksProps> = ({ type, Skeleton, openModal }) => {
@@ -31,6 +31,15 @@ const Tasks: React.FC<ITasksProps> = ({ type, Skeleton, openModal }) => {
         })
     }
   }, [])
+
+  const handleClick = (id: string) => {
+    console.log('Load task')
+    console.log(id)
+    api.tasks.getTask(id).then((result: TTask) => {
+      console.log(result)
+      openModal(result)
+    })
+  }
 
   if (fetchStatus == 'loading') {
     return <>{Skeleton}</>
@@ -57,7 +66,7 @@ const Tasks: React.FC<ITasksProps> = ({ type, Skeleton, openModal }) => {
                   badgeType={badgeType}
                   badgeText={task.status}
                   checkboxId={task.id + '_' + type}
-                  onClick={openModal}
+                  onClick={() => handleClick(task.id)}
                 >
                   {task.text}
                 </Task>

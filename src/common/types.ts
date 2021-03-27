@@ -1,11 +1,5 @@
-export type TNewTask = {
-  text: string
-  status: string
-  type: string
-}
-
 export type TTask = {
-  id: number
+  id: string
   text: string
   status: string
   type: string
