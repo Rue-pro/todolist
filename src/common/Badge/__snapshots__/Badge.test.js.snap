@@ -1,5 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`Badge no props 1`] = `<Fragment />`;
+
+exports[`Badge no props children 1`] = `<Fragment />`;
+
 exports[`Badge should render correctly with type=approved 1`] = `
 <styled.div
   bgColor="#ECE7FE"

@@ -33,8 +33,6 @@ const Tasks: React.FC<ITasksProps> = ({ type, Skeleton, openModal }) => {
   }, [])
 
   const handleClick = (id: string) => {
-    console.log('Load task')
-    console.log(id)
     api.tasks.getTask(id).then((result: TTask) => {
       console.log(result)
       openModal(result)
