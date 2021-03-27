@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Badge should render correctly 1`] = `
+<styled.div
+  bgColor="black"
+  color="black"
+>
+  <Text
+    color="black"
+  >
+    approved badge
+  </Text>
+</styled.div>
+`;
+
+exports[`Badge should render correctly 2`] = `
+<styled.div
+  bgColor="black"
+  color="black"
+>
+  <Text
+    color="black"
+  >
+    approved badge
+  </Text>
+</styled.div>
+`;
+
+exports[`Badge should render correctly with type=approved 1`] = `
+<styled.div
+  bgColor="#ECE7FE"
+  color="#623CE7"
+>
+  <Text
+    color="#623CE7"
+  >
+    approved badge
+  </Text>
+</styled.div>
+`;
+
+exports[`Badge should render correctly with type=inProgress 1`] = `
+<styled.div
+  bgColor="#E1FAF4"
+  color="#31B195"
+>
+  <Text
+    color="#31B195"
+  >
+    inProgress badge
+  </Text>
+</styled.div>
+`;
+
+exports[`Badge should render correctly with type=inReview 1`] = `
+<styled.div
+  bgColor="#FEE8EA"
+  color="#D83749"
+>
+  <Text
+    color="#D83749"
+  >
+    inReview badge
+  </Text>
+</styled.div>
+`;
+
+exports[`Badge should render correctly with type=waiting 1`] = `
+<styled.div
+  bgColor="#F7F8FC"
+  color="#9196A7"
+>
+  <Text
+    color="#9196A7"
+  >
+    waiting badge
+  </Text>
+</styled.div>
+`;
+
+exports[`Badge wrong props type 1`] = `
+<styled.div
+  bgColor="#ECE7FE"
+  color="#623CE7"
+>
+  <Text
+    color="#623CE7"
+  >
+    approved badge
+  </Text>
+</styled.div>
+`;
