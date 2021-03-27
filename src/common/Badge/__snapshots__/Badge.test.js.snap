@@ -1,31 +1,5 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Badge should render correctly 1`] = `
-<styled.div
-  bgColor="black"
-  color="black"
->
-  <Text
-    color="black"
-  >
-    approved badge
-  </Text>
-</styled.div>
-`;
-
-exports[`Badge should render correctly 2`] = `
-<styled.div
-  bgColor="black"
-  color="black"
->
-  <Text
-    color="black"
-  >
-    approved badge
-  </Text>
-</styled.div>
-`;
-
 exports[`Badge should render correctly with type=approved 1`] = `
 <styled.div
   bgColor="#ECE7FE"
@@ -80,13 +54,13 @@ exports[`Badge should render correctly with type=waiting 1`] = `
 
 exports[`Badge wrong props type 1`] = `
 <styled.div
-  bgColor="#ECE7FE"
-  color="#623CE7"
+  bgColor="black"
+  color="black"
 >
   <Text
-    color="#623CE7"
+    color="black"
   >
-    approved badge
+    wrong type badge
   </Text>
 </styled.div>
 `;
